@@ -4,7 +4,6 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
 import { Link } from "react-router-dom";
 
 export default function ProductsCard({ img, name, id, price }) {
@@ -22,6 +21,7 @@ export default function ProductsCard({ img, name, id, price }) {
       <CardActions>
         <Button size="small">
           <Link
+            style={{ color: "teal" }}
             to={`/product-details/${id}/${name
               .toLowerCase()
               .replaceAll(" ", "-")}`}
