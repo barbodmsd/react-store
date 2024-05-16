@@ -6,3 +6,6 @@
   text-decoration: none;
   list-style: none;
 }
+#master{
+  min-height: 100vh;
+}

@@ -8,7 +8,7 @@ export default function Footer() {
         justifyContent={"center"}
         alignItems={"center"}
         sx={{
-          height: 100,
+          height: 200,
           bgcolor: "teal",
         }}
       >

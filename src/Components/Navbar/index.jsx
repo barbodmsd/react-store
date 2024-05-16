@@ -46,15 +46,14 @@ export default function Navbar() {
             </Button>
           </Stack>
         </Stack>
-        <Box>
-          <IconButton>
-            <StyledBadge badgeContent={4} color="secondary">
-              <Link style={{ color: "white" }}>
-                <ShoppingCartIcon />
-              </Link>
-            </StyledBadge>
-          </IconButton>
-        </Box>
+
+        <IconButton>
+          <StyledBadge badgeContent={4} color="secondary">
+            <Link style={{ color: "white" }}>
+              <ShoppingCartIcon />
+            </Link>
+          </StyledBadge>
+        </IconButton>
       </Stack>
     </>
   );
