@@ -58,7 +58,7 @@ export default function Navbar() {
           </Stack>
         </Stack>
 
-        <IconButton style={{color:'white'}}>
+        <IconButton style={{ color: "white" }}>
           <StyledBadge badgeContent={listLength} color="secondary">
             <Link to={"/cart"} style={{ color: "white" }}>
               <ShoppingCartIcon />
