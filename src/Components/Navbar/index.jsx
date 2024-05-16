@@ -19,7 +19,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function Navbar() {
   // to show list length
   const listLength = useSelector((state) => state.cartSlice.list).length;
-  console.log({listLength})
   return (
     <>
       {/*create navbar */}
@@ -59,7 +58,7 @@ export default function Navbar() {
           </Stack>
         </Stack>
 
-        <IconButton>
+        <IconButton style={{color:'white'}}>
           <StyledBadge badgeContent={listLength} color="secondary">
             <Link to={"/cart"} style={{ color: "white" }}>
               <ShoppingCartIcon />
