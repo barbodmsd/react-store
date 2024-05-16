@@ -4,7 +4,11 @@
 Used :
 
 -Reduxjs/toolkit
+
 -react-redux
+
 -react-router-dom
+
 -mui
+
 -toastify
