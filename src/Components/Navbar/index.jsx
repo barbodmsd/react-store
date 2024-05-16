@@ -4,6 +4,7 @@ import Badge from "@mui/material/Badge";
 import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 // style to shopping cart
@@ -16,6 +17,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 export default function Navbar() {
+  // to show list length
+  const listLength = useSelector((state) => state.cartSlice.list).length;
+  console.log({listLength})
   return (
     <>
       {/*create navbar */}
@@ -56,7 +60,7 @@ export default function Navbar() {
         </Stack>
 
         <IconButton>
-          <StyledBadge badgeContent={4} color="secondary">
+          <StyledBadge badgeContent={listLength} color="secondary">
             <Link to={"/cart"} style={{ color: "white" }}>
               <ShoppingCartIcon />
             </Link>

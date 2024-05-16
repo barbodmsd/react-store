@@ -27,11 +27,12 @@ const cartSlice = createSlice({
       });
     },
     addItem: (state, action) => {
-      let add = false;
+      let add = false; //to show one item is in cart or not
       state.list = state.list.map((e) => {
         // if items was in the cart
         if (e.id === action.payload.id) {
           e.quantity = e.quantity + 1;
+          add = true;
           return e; //return the new item (items was changed his count)
         }
         return e; // put item in his place

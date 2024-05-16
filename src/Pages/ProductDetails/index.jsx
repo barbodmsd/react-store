@@ -43,9 +43,9 @@ export default function ProductDetails() {
               {product.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {product.description} <br />
-              Price : {product.price}
+              {product.description.slice(0,150)}
             </Typography>
+            <Typography fontSize={"20px"}>Price : {product.price}</Typography>
           </CardContent>
           <CardActions>
             <Stack direction={"row"} spacing={1} alignItems={"center"}>
