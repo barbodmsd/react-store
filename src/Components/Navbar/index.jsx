@@ -32,24 +32,32 @@ export default function Navbar() {
       >
         <Stack direction={"row"} alignItems={"center"} gap={"15px"}>
           <Typography component={"h1"} fontSize={"1.5rem"}>
-            <Link style={{ color: "white" }}>Navbar</Link>
+            <Link to={"/"} style={{ color: "white" }}>
+              Navbar
+            </Link>
           </Typography>
           <Stack direction={"row"} alignItems={"center"} gap={"10px"}>
             <Button style={{ color: "white" }}>
-              <Link style={{ color: "white" }}>Home</Link>
+              <Link to={"/"} style={{ color: "white" }}>
+                Home
+              </Link>
             </Button>
             <Button style={{ color: "white" }}>
-              <Link style={{ color: "white" }}>Products</Link>
+              <Link to={"/products"} style={{ color: "white" }}>
+                Products
+              </Link>
             </Button>
             <Button style={{ color: "white" }}>
-              <Link style={{ color: "white" }}>Auth</Link>
+              <Link to={"/auth"} style={{ color: "white" }}>
+                Auth
+              </Link>
             </Button>
           </Stack>
         </Stack>
 
         <IconButton>
           <StyledBadge badgeContent={4} color="secondary">
-            <Link style={{ color: "white" }}>
+            <Link to={"/cart"} style={{ color: "white" }}>
               <ShoppingCartIcon />
             </Link>
           </StyledBadge>
