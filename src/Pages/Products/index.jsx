@@ -1,8 +1,13 @@
+import { Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import ProductsCard from "./ProductsCard";
-import { Stack } from "@mui/material";
-
+import ProductsSkeleton from "./ProductsSkeleton";
+// make skeleton an array
+let loading = [];
+for (let i = 0; i < 8; i++) {
+  loading.push(<ProductsSkeleton />);
+}
 export default function Products() {
   const [products, setProducts] = useState();
   // get all the products
@@ -17,6 +22,8 @@ export default function Products() {
       }
     })();
   }, []);
+
+//   make card for all product
   const items = products?.map((e, index) => (
     <ProductsCard
       key={index}
@@ -28,7 +35,7 @@ export default function Products() {
   ));
   return (
     <>
-      {
+      {products ? (
         <Stack
           direction={"row"}
           flexWrap={"wrap"}
@@ -38,7 +45,17 @@ export default function Products() {
         >
           {items}
         </Stack>
-      }
+      ) : (
+        <Stack
+          direction={"row"}
+          flexWrap={"wrap"}
+          gap={"15px"}
+          justifyContent={"center"}
+          p={3}
+        >
+          {loading}
+        </Stack>
+      )}
     </>
   );
 }
