@@ -1,7 +1,8 @@
 # react store
  This project is for personal practice only.
 
-Used:
+Used :
+
 -Reduxjs/toolkit
 -react-redux
 -react-router-dom
