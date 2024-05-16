@@ -1,10 +1,10 @@
-import { Button, Stack, Typography, Box } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import Badge from "@mui/material/Badge";
+import IconButton from "@mui/material/IconButton";
+import { styled } from "@mui/material/styles";
 import React from "react";
 import { Link } from "react-router-dom";
-import Badge from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
-import IconButton from "@mui/material/IconButton";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 // style to shopping cart
 const StyledBadge = styled(Badge)(({ theme }) => ({

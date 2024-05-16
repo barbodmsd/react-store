@@ -1,7 +1,21 @@
-import React from 'react'
+import { Stack, Typography } from "@mui/material";
+import React from "react";
 
 export default function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <>
+      <Stack
+        justifyContent={"center"}
+        alignItems={"center"}
+        sx={{
+          height: 100,
+          bgcolor: "teal",
+        }}
+      >
+        <Typography variant={"h1"} style={{ color: "white" }}>
+          Footer
+        </Typography>
+      </Stack>
+    </>
+  );
 }
