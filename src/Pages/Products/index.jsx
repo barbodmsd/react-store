@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import ProductsCard from "./ProductsCard";
+import { Stack } from "@mui/material";
 
 export default function Products() {
   const [products, setProducts] = useState();
@@ -17,7 +18,27 @@ export default function Products() {
     })();
   }, []);
   const items = products?.map((e, index) => (
-    <ProductsCard key={index} img={e.image} name={e.title} price={e.price} id={e.id} />
+    <ProductsCard
+      key={index}
+      img={e.image}
+      name={e.title}
+      price={e.price}
+      id={e.id}
+    />
   ));
-  return <div>Products</div>;
+  return (
+    <>
+      {
+        <Stack
+          direction={"row"}
+          flexWrap={"wrap"}
+          gap={"15px"}
+          justifyContent={"center"}
+          p={3}
+        >
+          {items}
+        </Stack>
+      }
+    </>
+  );
 }
