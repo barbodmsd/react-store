@@ -10,22 +10,20 @@ export default function ProductsCard({img,name,id,price}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
+        sx={{ height: '60%' }}
+        image={img}
+        title={name}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          Price : ${price}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" ><Link to={`/product-details/${id}/${name}`}>More details</Link></Button>
       </CardActions>
     </Card>
   );
