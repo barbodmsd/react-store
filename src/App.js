@@ -9,7 +9,8 @@ import ProductDetails from "./Pages/ProductDetails";
 import Auth from "./Pages/Auth";
 import Cart from "./Pages/Cart";
 import NotFound from "./Pages/NotFound";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function App() {
   return (
     <>
@@ -30,6 +31,21 @@ export default function App() {
         </Routes>
       </Box>
       <Footer />
+
+      {/*  paste toast  */}
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 }
