@@ -1,18 +1,16 @@
-import React from "react";
 import {
-  Paper,
-  TableContainer,
-  Table,
-  TableRow,
-  TableCell,
-  TableHead,
-  TableBody,
   Button,
-  Skeleton,
+  Paper,
   Stack,
-  Typography,
-  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography
 } from "@mui/material";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, clear, removeItem } from "../../Store/Slices/cartSlice";
 import CartSkeleton from "./CartSkeleton";
@@ -78,7 +76,6 @@ export default function Cart() {
               </Table>
             </TableContainer>
           </Paper>
-
           <Button
             variant={"contained"}
             color={"error"}
