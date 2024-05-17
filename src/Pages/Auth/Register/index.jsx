@@ -60,6 +60,7 @@ export default function Register({handlePageType}) {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                color={'secondary'}
               />
               <TextField
                 margin="normal"
@@ -70,9 +71,10 @@ export default function Register({handlePageType}) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                color={'secondary'}
               />
               <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
+                control={<Checkbox value="remember" color="secondary" />}
                 label="Remember me"
               />
               <Button
@@ -80,17 +82,18 @@ export default function Register({handlePageType}) {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                color={'secondary'}
               >
                 Sign In
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Button color={'secondary'}>
                     Forgot password?
-                  </Link>
+                  </Button>
                 </Grid>
                 <Grid item>
-                  <Button onClick={handlePageType}>
+                  <Button color={'secondary'} onClick={handlePageType}>
                     Do you have an account? Sign Up
                   </Button>
                 </Grid>
