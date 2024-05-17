@@ -54,7 +54,6 @@ export default function App() {
         draggable
         pauseOnHover
         theme="colored"
-        
       />
     </>
   );
