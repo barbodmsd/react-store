@@ -74,7 +74,7 @@ export default function ProductDetails() {
         </Card>
       ) : (
         // skeleton
-        <Card sx={{ width: 600, height: 700, m: "100px auto" }}>
+        <Card sx={{ width: 600, height: 500, m: "100px auto" }}>
           <Skeleton
             width={"100%"}
             height={"60%"}
