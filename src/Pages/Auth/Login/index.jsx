@@ -19,7 +19,7 @@ import useForm from "../../../Utils/useForm";
 const defaultTheme = createTheme();
 
 export default function Login({ handlePageType }) {
-  const [fields, handleChange] = useForm(); //costume hooke
+  const [fields, handleChange] = useForm(); //costume hook
   const { token } = useSelector((state) => state.authSlice); //get token from store
   const dispatch = useDispatch();
 
