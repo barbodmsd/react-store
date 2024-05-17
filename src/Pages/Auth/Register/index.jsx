@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function Register() {
-    const [pageType,setPageType]=useState('login')
   return (
     <div>Register</div>
   )
