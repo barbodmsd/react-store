@@ -4,8 +4,9 @@ import Badge from "@mui/material/Badge";
 import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../../Store/Slices/authSlice";
 
 // style to shopping cart
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -17,8 +18,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 export default function Navbar() {
-  // to show list length
-  const listLength = useSelector((state) => state.cartSlice.list).length;
+  const listLength = useSelector((state) => state.cartSlice.list).length; // to show list length
+  const { token } = useSelector((state) => state.authSlice);
+  const dispatch = useDispatch();
   return (
     <>
       {/*create navbar */}
@@ -51,9 +53,17 @@ export default function Navbar() {
               </Link>
             </Button>
             <Button style={{ color: "white" }}>
-              <Link to={"/auth"} style={{ color: "white" }}>
-                Auth
-              </Link>
+              {token ? (
+                <Button style={{ color: "white" }} onClick={dispatch(logout)}>
+                  Logout
+                </Button>
+              ) : (
+                <Button style={{ color: "white" }}>
+                  <Link to={"/auth"} style={{ color: "white" }}>
+                    Auth
+                  </Link>
+                </Button>
+              )}
             </Button>
           </Stack>
         </Stack>

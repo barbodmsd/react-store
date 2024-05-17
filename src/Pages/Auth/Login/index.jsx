@@ -33,6 +33,7 @@ export default function Login({ handlePageType }) {
       });
       const data = await res.json();
       dispatch(login(data.token));
+      toast.success('Login successfully :)')
     } catch (error) {
       toast.error("Username or password inCorrect!");
     }
