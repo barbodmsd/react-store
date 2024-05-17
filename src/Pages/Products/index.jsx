@@ -6,7 +6,7 @@ import ProductsSkeleton from "./ProductsSkeleton";
 // make skeleton an array
 let loading = [];
 for (let i = 0; i < 8; i++) {
-  loading.push(<ProductsSkeleton />);
+  loading.push(<ProductsSkeleton key={i}/>);
 }
 export default function Products() {
   const [products, setProducts] = useState();
