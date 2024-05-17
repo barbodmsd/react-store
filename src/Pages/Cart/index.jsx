@@ -11,9 +11,10 @@ import {
   Skeleton,
   Stack,
   Typography,
+  Box,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, removeItem } from "../../Store/Slices/cartSlice";
+import { addItem, clear, removeItem } from "../../Store/Slices/cartSlice";
 import CartSkeleton from "./CartSkeleton";
 export default function Cart() {
   const { list } = useSelector((state) => state.cartSlice); //get the list of items
@@ -58,29 +59,39 @@ export default function Cart() {
     <>
       {/* if list was'nt empty will show it, but if cart was empty will show skeleton table with  text  */}
       {list.length > 0 ? (
-        <Paper>
-          <TableContainer>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell align={"center"}>Id</TableCell>
-                  <TableCell align={"center"}>Name</TableCell>
-                  <TableCell align={"center"}>Image</TableCell>
-                  <TableCell align={"center"}>Price</TableCell>
-                  <TableCell align={"center"}>Quantity</TableCell>
-                  <TableCell align={"center"}>Total Price</TableCell>
-                  <TableCell align={"center"}>Add/remove</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>{items}</TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
+        <>
+          <Paper>
+            <TableContainer>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell align={"center"}>Id</TableCell>
+                    <TableCell align={"center"}>Name</TableCell>
+                    <TableCell align={"center"}>Image</TableCell>
+                    <TableCell align={"center"}>Price</TableCell>
+                    <TableCell align={"center"}>Quantity</TableCell>
+                    <TableCell align={"center"}>Total Price</TableCell>
+                    <TableCell align={"center"}>Add/remove</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>{items}</TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+
+          <Button
+            variant={"contained"}
+            color={"error"}
+            onClick={() => dispatch(clear([]))}
+          >
+            Clear
+          </Button>
+        </>
       ) : (
         <>
           {/* skeleton table  */}
           <CartSkeleton />
-          <Stack alignItems={'center'} my={3}>
+          <Stack alignItems={"center"} my={3}>
             <Typography variant={"h1"}> Cart is empty!</Typography>
           </Stack>
         </>
