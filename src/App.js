@@ -11,7 +11,9 @@ import Cart from "./Pages/Cart";
 import NotFound from "./Pages/NotFound";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 export default function App() {
+  const {token}=useSelector(state=>state.authSlice)
   return (
     <>
       <Navbar />
@@ -25,7 +27,7 @@ export default function App() {
             path={"/product-details/:id/:name"}
             element={<ProductDetails />}
           />
-          <Route exact path={"/auth"} element={<Auth />} />
+          <Route exact path={"/auth"} element={token?<Navigate to={'/'}/>:<Auth />} />
           <Route exact path={"/cart"} element={<Cart />} />
           <Route exact path={"*"} element={<NotFound />} />
         </Routes>
