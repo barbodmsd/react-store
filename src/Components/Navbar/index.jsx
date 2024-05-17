@@ -7,6 +7,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../Store/Slices/authSlice";
+import { toast } from "react-toastify";
 
 // style to shopping cart
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -54,7 +55,10 @@ export default function Navbar() {
             </Button>
             <Button style={{ color: "white" }}>
               {token ? (
-                <Button style={{ color: "white" }} onClick={dispatch(logout)}>
+                <Button style={{ color: "white" }} onClick={()=>{
+                  toast.info('Logout successfully!')
+                  dispatch(logout(null))
+                }}>
                   Logout
                 </Button>
               ) : (
