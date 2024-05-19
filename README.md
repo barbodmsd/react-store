@@ -3,7 +3,7 @@
 
 Used :
 
--Reduxjs/toolkit
+- Reduxjs/toolkit
 
 -react-redux
 
