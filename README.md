@@ -5,10 +5,10 @@ Used :
 
 - Reduxjs/toolkit
 
--react-redux
+- react-redux
 
--react-router-dom
+- react-router-dom
 
--mui
+- mui
 
--toastify
+- toastify
