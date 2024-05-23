@@ -79,7 +79,7 @@ export default function Cart() {
           <Button
             variant={"contained"}
             color={"error"}
-            onClick={() => dispatch(clear([]))}
+            onClick={() => dispatch(clear())}
           >
             Clear
           </Button>
