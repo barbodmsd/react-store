@@ -10,8 +10,8 @@ const cartSlice = createSlice({
   initialState,
   // actions
   reducers: {
-    clear: (state,action) => {
-      state.list = action.payload;
+    clear: (state) => {
+      state.list = [];
     },
     removeItem: (state, action) => {
       state.list = state.list.filter((e) => {
